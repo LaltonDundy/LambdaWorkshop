@@ -1,0 +1,96 @@
+( 
+  ******** Dalton Lundy - 2019 *********
+  HelloWorld implemented in Brainforth.
+  written nativly without a written standard file 
+)
+
+
+: add_1                       + ;
+: add_2                     + + ;
+: add_3                   + + + ;
+: add_4                 + + + + ;
+: add_5               + + + + + ;
+: add_10        add_5   add_5   ;
+: add_25    add_10 add_10 add_5 ;
+: add_50          add_25 add_25 ;
+
+
+: sub_1                       - ;
+: sub_2                     - - ;
+: sub_3                   - - - ;
+: sub_4                 - - - - ;
+: sub_5               - - - - - ;
+: sub_10        sub_5   sub_5   ;
+: sub_25    sub_10 sub_10 sub_5 ;
+: sub_50          sub_25 sub_25 ;
+
+: print_h
+  add_50 add_50 add_4
+  . 
+  sub_50 sub_50 sub_4
+;
+  
+: print_e
+  add_50 add_50 add_1
+  . 
+  sub_50 sub_50 sub_1
+;
+
+: print_l
+  add_50 add_50 add_4 add_4
+  . 
+  sub_50 sub_50 sub_4 sub_4
+;
+
+: print_o 
+  add_50 add_50 add_10 add_1
+  .
+  sub_50 sub_50 sub_10 sub_1
+;
+
+: print_w
+  add_50 add_50 add_10  add_10 sub_1
+  .
+  sub_50 sub_50 sub_10 sub_10 add_1
+;
+
+: print_r
+  add_50 add_50 add_10 add_4
+  .
+  sub_50 sub_50 sub_10 sub_4
+;
+
+: print_d
+  add_50 add_50
+  .
+  sub_50 sub_50
+;
+
+: print_space
+    add_25 add_5 add_2
+    .
+    sub_25 sub_5 sub_2
+;
+
+: print_endline
+    add_10 
+    .
+    sub_10
+;
+
+: hello_world
+    print_h
+    print_e
+    print_l
+    print_l
+    print_o
+    print_space
+    print_w
+    print_o
+    print_r
+    print_l
+    print_d
+    print_endline
+;
+  
+hello_world
